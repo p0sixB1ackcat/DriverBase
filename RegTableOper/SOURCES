@@ -1,0 +1,4 @@
+TARGETNAME=p0sixB1ackcatRegTableOper
+TARGETPATH=debug
+TARGETTYPE=DRIVER
+SOURCES=RegTableOper.c
