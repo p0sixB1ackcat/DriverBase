@@ -1,1 +1,0 @@
-ULONG PBCMultiThreadSearchFunAddr(WCHAR *);
