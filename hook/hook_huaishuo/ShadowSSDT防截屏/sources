@@ -1,0 +1,17 @@
+# Copyright (c) Microsoft Corporation.  All rights reserved.
+#
+# sources
+# Microsoft Virutal NDIS-WDM Miniport Driver
+# BUILD command sources file
+#
+
+TARGETNAME=hooker
+TARGETTYPE=DRIVER
+TARGETPATH=OBJ
+
+SOURCES = Driver.c \
+          process.c  \
+
+
+
+

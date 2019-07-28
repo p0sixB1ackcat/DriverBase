@@ -1,0 +1,6 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver
+1>c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver\driver.c(24) : warning C4133: 'function' : incompatible types - from 'unsigned short [22]' to 'PCSTR'
+1>c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver\driver.c(85) : warning C4133: 'function' : incompatible types - from 'unsigned short [25]' to 'PCSTR'
+1>c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver\driver.c(93) : warning C4133: 'function' : incompatible types - from 'unsigned short [30]' to 'PCSTR'
+1>c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver\driver.c(109) : warning C4133: 'function' : incompatible types - from 'unsigned short [32]' to 'PCSTR'
+1>c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver\driver.c(123) : warning C4995: 'ExAcquireResourceExclusive': name was marked as #pragma deprecated

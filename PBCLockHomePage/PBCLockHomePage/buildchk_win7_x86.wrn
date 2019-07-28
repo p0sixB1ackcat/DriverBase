@@ -1,0 +1,22 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.h(4) : warning C4005: 'MAX_PATH' : macro redefinition
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.c(27) : warning C4244: '=' : conversion from 'unsigned long' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.c(107) : warning C4242: '=' : conversion from 'size_t' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.c(133) : warning C4242: '=' : conversion from 'size_t' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.h(4) : warning C4005: 'MAX_PATH' : macro redefinition
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(46) : warning C4047: 'function' : 'PVOID *' differs in levels of indirection from 'TOKEN_ELEVATION *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(46) : warning C4022: 'SeQueryInformationToken' : pointer mismatch for actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(183) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(183) : warning C4024: 'ZwQueryInformationProcess' : different types for formal and actual parameter 4
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(192) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [5]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(192) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(214) : warning C4242: '=' : conversion from 'ULONG' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(215) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [5]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(215) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(327) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [4]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(327) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(366) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [5]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(366) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(368) : warning C4244: '=' : conversion from 'ULONG' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(478) : warning C4047: 'function' : 'PDEVICE_OBJECT *' differs in levels of indirection from 'DEVICE_OBJECT *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(478) : warning C4024: 'IoCreateDevice' : different types for formal and actual parameter 7

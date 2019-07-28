@@ -1,0 +1,5 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\hook\ssdt
+1>c:\users\p0sixb1ackcat\documents\code\hook\ssdt\ssdthook.c(107) : warning C4047: 'function' : 'volatile LONG *' differs in levels of indirection from 'ULONG'
+1>c:\users\p0sixb1ackcat\documents\code\hook\ssdt\ssdthook.c(107) : warning C4024: '_InterlockedExchange' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\ssdt\ssdthook.c(180) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\ssdt\ssdthook.c(180) : warning C4024: 'IoCreateDevice' : different types for formal and actual parameter 2

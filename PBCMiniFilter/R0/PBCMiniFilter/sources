@@ -1,0 +1,13 @@
+TARGETNAME=PBCMiniFilter
+TARGETTYPE=DRIVER
+DRIVERTYPE=FS
+
+
+INCLUDES=$(INCLUDES);C:\WinDDK\7600.16385.1\src\filesys\miniFilter\scanner\inc
+
+TARGETLIBS= $(TARGETLIBS) \
+            $(IFSKIT_LIB_PATH)\fltMgr.lib
+
+SOURCES=PBCMiniFilter.c  \
+        PBCMiniFilter.rc
+

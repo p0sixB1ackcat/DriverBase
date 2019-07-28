@@ -1,0 +1,16 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\driver.obj \
+
+
+
+
+
+# lowercased
+BASEDIR=c:\winddk\7600.16385.1
+OBJECT_ROOT=c:\winddk\7600.16385.1
+MAKEDIR_LOWERCASE=c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver
+OBJ_PATH=c:\users\p0sixb1ackcat\documents\code\pbcinlinehook_test\r0\pcbdriver
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

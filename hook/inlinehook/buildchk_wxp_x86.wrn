@@ -1,0 +1,20 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\hook\inlinehook
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(74) : warning C4047: 'function' : 'BYTE *' differs in levels of indirection from 'PSPTERMINATEPROCESS'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(74) : warning C4024: 'WriteKernelMemory' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(164) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [5]'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(164) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(168) : warning C4098: 'InlineHookPspTerminateProcess' : 'void' function returning a value
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(173) : warning C4098: 'InlineHookPspTerminateProcess' : 'void' function returning a value
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(185) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'unsigned short [4]'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(185) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(193) : warning C4047: 'function' : 'BYTE *' differs in levels of indirection from 'PSPTERMINATEPROCESS'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(193) : warning C4024: 'WriteKernelMemory' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(221) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(221) : warning C4024: 'IoCreateDevice' : different types for formal and actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(225) : warning C4047: 'function' : 'PDEVICE_OBJECT *' differs in levels of indirection from 'DEVICE_OBJECT *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\inlinehook.c(225) : warning C4024: 'IoCreateDevice' : different types for formal and actual parameter 7
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\pbcmultithreadsearch.c(52) : warning C4995: 'ExReleaseResource': name was marked as #pragma deprecated
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\pbcmultithreadsearch.c(80) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'ULONG *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\pbcmultithreadsearch.c(80) : warning C4024: 'NtQuerySystemInfo' : different types for formal and actual parameter 4
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\pbcmultithreadsearch.c(89) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'ULONG *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\inlinehook\pbcmultithreadsearch.c(89) : warning C4024: 'NtQuerySystemInfo' : different types for formal and actual parameter 4

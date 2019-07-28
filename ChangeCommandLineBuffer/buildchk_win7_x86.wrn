@@ -1,0 +1,12 @@
+1>warnings in directory c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\liketest.c(74) : warning C4047: '=' : 'PDRIVER_UNLOAD' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(18) : warning C4022: 'PsLookupProcessByProcessId' : pointer mismatch for actual parameter 1
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(34) : warning C4047: 'function' : 'wchar_t *' differs in levels of indirection from 'PWCHAR *'
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(34) : warning C4024: 'wcscat' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(36) : warning C4133: 'function' : incompatible types - from 'int *' to 'PUNICODE_STRING'
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(36) : warning C4047: 'function' : 'PCWSTR' differs in levels of indirection from 'PWCHAR *'
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(36) : warning C4024: 'RtlInitUnicodeString' : different types for formal and actual parameter 2
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(72) : warning C4047: 'function' : 'PCREATE_PROCESS_NOTIFY_ROUTINE' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(72) : warning C4024: 'PsSetCreateProcessNotifyRoutine' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(81) : warning C4047: 'function' : 'PCREATE_PROCESS_NOTIFY_ROUTINE' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\desktop\changecommandlinebuffer\work.c(81) : warning C4024: 'PsSetCreateProcessNotifyRoutine' : different types for formal and actual parameter 1

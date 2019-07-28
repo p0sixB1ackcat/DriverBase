@@ -97,7 +97,7 @@ BOOL LoadDriver(char* lpszDriverName,char* lpszDriverPath)
 	{
 		printf( "CrateService() ok ! \n" );
 	}
-
+	
 	//开启此项服务
 	bRet= StartService( hServiceDDK, NULL, NULL );  
 	if( !bRet )  

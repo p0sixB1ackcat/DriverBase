@@ -1,0 +1,17 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\pbcscanner.obj \
+
+
+_RES_FILE=$(OBJ_PATH)\$O\pbcscanuser.res
+
+
+
+# lowercased
+BASEDIR=c:\winddk\7600.16385.1
+OBJECT_ROOT=c:\winddk\7600.16385.1
+MAKEDIR_LOWERCASE=c:\users\p0sixb1ackcat\documents\code\pbcminifilter\r3\pbcscanuser\pbcscanuser
+OBJ_PATH=c:\users\p0sixb1ackcat\documents\code\pbcminifilter\r3\pbcscanuser\pbcscanuser
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

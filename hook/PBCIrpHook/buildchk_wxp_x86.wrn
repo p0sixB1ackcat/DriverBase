@@ -1,0 +1,6 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\hook\pbcirphook
+1>c:\users\p0sixb1ackcat\documents\code\hook\pbcirphook\pbcirphook.c(29) : warning C4098: 'DriverUnload' : 'void' function returning a value
+1>c:\users\p0sixb1ackcat\documents\code\hook\pbcirphook\pbcirphook.c(80) : warning C4047: 'function' : 'volatile LONG *' differs in levels of indirection from 'PDRIVER_DISPATCH *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\pbcirphook\pbcirphook.c(80) : warning C4024: '_InterlockedExchange' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\pbcirphook\pbcirphook.c(101) : warning C4047: 'function' : 'PDEVICE_OBJECT *' differs in levels of indirection from 'DEVICE_OBJECT *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\pbcirphook\pbcirphook.c(101) : warning C4024: 'IoCreateDevice' : different types for formal and actual parameter 7

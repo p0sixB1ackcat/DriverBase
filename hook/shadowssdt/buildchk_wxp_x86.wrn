@@ -1,0 +1,13 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(158) : warning C4022: 'PsLookupProcessByProcessId' : pointer mismatch for actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(174) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(174) : warning C4024: 'ZwQueryInformationProcess' : different types for formal and actual parameter 4
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(232) : warning C4047: 'function' : 'ACCESS_MASK' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(232) : warning C4024: 'ObReferenceObjectByHandle' : different types for formal and actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(397) : warning C4047: 'function' : 'ULONG_PTR' differs in levels of indirection from 'HANDLE'
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(397) : warning C4024: 'GetProcessNameByPid' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(426) : warning C4047: 'function' : 'ULONG_PTR' differs in levels of indirection from 'HANDLE'
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(426) : warning C4024: 'GetProcessNameByPid' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(501) : warning C4047: '=' : 'HANDLE' differs in levels of indirection from 'ULONG'
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(513) : warning C4022: 'ZwDuplicateObject' : pointer mismatch for actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\hook\shadowssdt\shadowssdt.c(302) : warning C4716: 'PBC_NtUserHwndQueryRedirectoryInfo' : must return a value

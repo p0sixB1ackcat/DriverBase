@@ -1,0 +1,17 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\pbcstr.obj \
+ $(OBJ_PATH)\$O\main.obj \
+
+
+
+
+
+# lowercased
+BASEDIR=c:\winddk\7600.16385.1
+OBJECT_ROOT=c:\winddk\7600.16385.1
+MAKEDIR_LOWERCASE=c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage
+OBJ_PATH=c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

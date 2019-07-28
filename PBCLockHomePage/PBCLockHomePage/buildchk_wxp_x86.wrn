@@ -1,0 +1,40 @@
+1>warnings in directory c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.h(4) : warning C4005: 'MAX_PATH' : macro redefinition
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.c(27) : warning C4244: '=' : conversion from 'unsigned long' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.c(107) : warning C4242: '=' : conversion from 'size_t' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.c(133) : warning C4242: '=' : conversion from 'size_t' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\pbcstr.h(4) : warning C4005: 'MAX_PATH' : macro redefinition
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(45) : warning C4047: 'function' : 'PVOID *' differs in levels of indirection from 'TOKEN_ELEVATION *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(45) : warning C4022: 'SeQueryInformationToken' : pointer mismatch for actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(182) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(182) : warning C4024: 'ZwQueryInformationProcess' : different types for formal and actual parameter 4
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(191) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [5]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(191) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(213) : warning C4242: '=' : conversion from 'ULONG' to 'USHORT', possible loss of data
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(214) : warning C4047: 'function' : 'ULONG' differs in levels of indirection from 'char [5]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(214) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 3
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(245) : warning C4047: '=' : 'int' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(246) : warning C4047: '=' : 'int' differs in levels of indirection from 'void *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(249) : warning C4047: '=' : 'int' differs in levels of indirection from 'unsigned short [24]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(274) : warning C4133: 'function' : incompatible types - from 'int *' to 'PUNICODE_STRING'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(276) : warning C4133: 'function' : incompatible types - from 'int *' to 'PUNICODE_STRING'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(285) : warning C4047: 'function' : 'PEPROCESS *' differs in levels of indirection from 'int *'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(285) : warning C4024: 'PsLookupProcessByProcessId' : different types for formal and actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(300) : warning C4047: 'function' : 'PRKPROCESS' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(300) : warning C4024: 'KeStackAttachProcess' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(300) : warning C4133: 'function' : incompatible types - from 'int *' to 'PRKAPC_STATE'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(302) : warning C4047: 'function' : 'PEPROCESS' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(302) : warning C4024: 'PsGetProcessPeb' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(302) : warning C4047: '=' : 'int' differs in levels of indirection from 'PPEB'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(326) : warning C4047: 'function' : 'const wchar_t *' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(326) : warning C4024: 'wcslen' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(326) : warning C4047: 'function' : 'SIZE_T' differs in levels of indirection from 'char [4]'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(326) : warning C4024: 'ExAllocatePoolWithTag' : different types for formal and actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(333) : warning C4047: 'function' : 'const wchar_t *' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(333) : warning C4024: 'wcslen' : different types for formal and actual parameter 1
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(335) : warning C4022: 'memcpy' : pointer mismatch for actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(340) : warning C4133: 'function' : incompatible types - from 'int *' to 'PUNICODE_STRING'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(340) : warning C4047: 'function' : 'NTSTRSAFE_PCWSTR' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(340) : warning C4024: 'RtlUnicodeStringCbCatStringN' : different types for formal and actual parameter 2
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(340) : warning C4047: 'function' : 'const wchar_t *' differs in levels of indirection from 'int'
+1>c:\users\p0sixb1ackcat\documents\code\pbclockhomepage\pbclockhomepage\main.c(340) : warning C4024: 'wcslen' : different types for formal and actual parameter 1
