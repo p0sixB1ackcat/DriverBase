@@ -104,6 +104,11 @@ BOOL CTargetDlg::OnInitDialog()
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
+int CryptDataFounction(ULONG Value, ULONG Key)
+{
+	return Value + (Key << 8);
+}
+
 void CTargetDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
