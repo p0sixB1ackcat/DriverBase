@@ -395,7 +395,11 @@ void CPBCDLLInjectDlg::OnBnClickedCreateremotethreadinject()
 		goto finish;
 
 	//将从目标进程分配的内存写入内容，这里要注入dll的路径，作为后面执行远程线程执行函数的参数
-	::WriteProcessMemory(hTargetProcess, lpRemoteBuffer, lpInjectDllPath, sizeof(lpInjectDllPath), NULL);
+    if (!::WriteProcessMemory(hTargetProcess, lpRemoteBuffer, lpInjectDllPath, sizeof(lpInjectDllPath), NULL))
+    {
+        MessageBoxA("写入进程数据失败", "message", 0);
+        goto finish;
+    }
 
 	hRemoteHandle = CreateRemoteThread(hTargetProcess
 		, NULL
@@ -574,8 +578,9 @@ ULONG _getthreadid(ULONG dwProcessId)
 }
 
 char shellCode[] =
+{ 
 #ifndef _WIN64
-{ 0x68,0x90,0x90,0x90,0x90 //push xxxx eip占位符
+    0x68,0x90,0x90,0x90,0x90 //push xxxx eip占位符
 ,0x9c //pushfd
 ,0x60//pushad cpu现场
 ,0x68,0x90,0x90,0x90,0x90//push xxxx dllpath
@@ -584,10 +589,12 @@ char shellCode[] =
 ,0x61 //popad
 ,0x9d //popfd
 ,0xc3 //ret
-};
 #else
+    0
 #endif
+};
 
+/*
 UINT32 WINAPI CPBCDLLInjectDlg::SetThreadContextRoutine(PVOID pContext)
 {
 	PVOID pRemoteBuffer = NULL;
@@ -696,10 +703,11 @@ UINT32 WINAPI CPBCDLLInjectDlg::SetThreadContextRoutine(PVOID pContext)
 	return dwResult;
 
 }
+*/
 
 void CPBCDLLInjectDlg::OnBnClickedSetthreadcontextBtn()
 {
-	HANDLE hThread;
+	HANDLE hThread = NULL;
 	ULONG dwProcessId;
 
 	if (!CheckInput())
@@ -707,7 +715,7 @@ void CPBCDLLInjectDlg::OnBnClickedSetthreadcontextBtn()
 
 	dwProcessId = __atoi(m_strProcId.GetBuffer(),m_strProcId.GetLength());
 
-	hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)SetThreadContextRoutine, &dwProcessId, 0, 0);
+	//hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)SetThreadContextRoutine, &dwProcessId, 0, 0);
 
 	WaitForSingleObject(hThread, INFINITE);
 

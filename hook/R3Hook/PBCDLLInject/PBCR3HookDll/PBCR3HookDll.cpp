@@ -16,8 +16,17 @@ ULONG_PTR(__cdecl *GetOriginalFunction)(ULONG_PTR HookFunction);
 //Hook后的函数,签名要和原函数保持一致
 int WINAPI PBC_MessageBoxA(__in HWND hWnd, __in LPCSTR lpText, __in LPCSTR lpCaption, __in unsigned int uType);
 
+HMODULE WINAPI PBC_LoadLibraryEx(
+    _In_ LPCTSTR lpLibFileName,
+    _Reserved_ HANDLE hFile,
+    _In_ DWORD dwFlags
+);
+
 //定义备份函数
 int (WINAPI *OldMessageBoxA)(__in HWND hWnd, __in LPCSTR lpText, __in LPCSTR lpCaption, __in unsigned int uType);
+
+HMODULE(WINAPI* OldLoadLibraryEx)(_In_ LPCTSTR lpLibFileName, _Reserved_ HANDLE hFile, _In_ DWORD dwFlags);
+
 
 VOID PBC_StartHook(VOID);
 VOID PBX_UnHook(VOID);
@@ -87,11 +96,15 @@ extern "C" __declspec(dllexport)int KeyBoardHook()
 	return 1;
 }
 
+
+
 VOID PBC_StartHook(VOID)
 {
 	HMODULE hNtHookEngine;
 	ULONG_PTR MessageBoxAAddress;
-	hNtHookEngine =  LoadLibrary(_T("NtHookEngine.dll"));
+    ULONG_PTR LoadLibraryExAddress;
+
+	hNtHookEngine =  LoadLibrary(TEXT("NtHookEngine.dll"));
 	if (!hNtHookEngine)
 	{
 		MessageBoxA(0,_T("没有找到NtHookEngine.dll"),_T("message"),0);
@@ -117,6 +130,10 @@ VOID PBC_StartHook(VOID)
 	MessageBoxAAddress = (ULONG_PTR)GetProcAddress(LoadLibraryA(_T("User32.dll")), _T("MessageBoxA"));
 	HookFunction((ULONG_PTR)MessageBoxAAddress, (ULONG_PTR)&PBC_MessageBoxA);
 	OldMessageBoxA = (int ( WINAPI *)(HWND,LPCSTR,LPCSTR,UINT))GetOriginalFunction((ULONG_PTR)PBC_MessageBoxA);
+    LoadLibraryExAddress = (ULONG_PTR)GetProcAddress(LoadLibraryA(TEXT("KERNEL32.dll")), "LoadLibraryExA");
+    HookFunction((ULONG_PTR)LoadLibraryExAddress, (ULONG_PTR)&PBC_LoadLibraryEx);
+    OldLoadLibraryEx = (HMODULE (WINAPI *)(LPCTSTR,HANDLE,DWORD))GetOriginalFunction((ULONG_PTR)PBC_LoadLibraryEx);
+
 
 }
 
@@ -128,8 +145,17 @@ int WINAPI PBC_MessageBoxA(__in HWND hWnd, __in LPCSTR lpText, __in LPCSTR lpCap
 	return OldMessageBoxA(hWnd, lpText, Buffer, uType);
 }
 
+HMODULE WINAPI PBC_LoadLibraryEx(_In_ LPCTSTR lpFileName, _Reserved_ HANDLE hFile, _In_ DWORD dwFlags)
+{
+    MessageBox(0, TEXT("执行LoadLibraryEx!"), TEXT("Message"), 0);
+
+    return OldLoadLibraryEx(lpFileName,hFile,dwFlags);
+}
+
 VOID PBC_UnHook(VOID)
 {
 	ULONG_PTR Original = (ULONG_PTR)GetProcAddress(GetModuleHandle(_T("User32.dll")),(LPCSTR)_T("MessageBoxA"));
 	UnHookFunction(Original);
+    Original = (ULONG_PTR)GetProcAddress(GetModuleHandle(TEXT("KERNEL32.dll")), TEXT("LoadLibraryEx"));
+    UnHookFunction(Original);
 }
