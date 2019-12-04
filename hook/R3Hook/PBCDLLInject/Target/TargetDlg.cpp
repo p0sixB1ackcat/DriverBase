@@ -163,6 +163,11 @@ HCURSOR CTargetDlg::OnQueryDragIcon()
 void CTargetDlg::OnBnClickedOk()
 {
 	// TODO: 在此添加控件通知处理程序代码
+    HMODULE hModule = NULL;
 	MessageBoxA(0, "hi", "message", 0);
+    hModule = LoadLibraryEx(TEXT("KERNEL32.dll"),NULL,1);
+
+    if (hModule)
+        FreeLibrary(hModule);
 	//CDialogEx::OnOK();
 }

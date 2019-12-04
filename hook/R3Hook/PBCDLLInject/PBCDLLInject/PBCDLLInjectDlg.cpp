@@ -305,8 +305,15 @@ void CPBCDLLInjectDlg::OnBnClickedNtcreatethreadButton()
 		}
 
 		pLoadLibraryFunc = (PTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle("Kernel32.dll"), "LoadLibraryA");
-
-		ntBuffer = { sizeof(NtCreateThreadBuffer), 0x10003, 0x08, (DWORD *)&l2, 0, 0x10004, 4, (DWORD *)&l1, 0 };
+        ntBuffer.Size = sizeof(NtCreateThreadBuffer);
+        ntBuffer.Unknown1 = 0x10003;
+        ntBuffer.Unknown2 = 0x08;
+        ntBuffer.Unknown3 = (DWORD*)&l2;
+        ntBuffer.Unknown4 = 0;
+        ntBuffer.Unknown5 = 0x10004;
+        ntBuffer.Unknown6 = 4;
+        ntBuffer.Unknown7 = (DWORD*)&l1;
+        ntBuffer.Unknown8 = 0;
 
 		bResult = fNtCreateThreadEx(&hThread, 0x1fffff, NULL, hProcess, pLoadLibraryFunc, pVirtualMemory, FALSE, 0, 0, 0, NULL);
 		if (bResult != ERROR_SUCCESS)
@@ -573,145 +580,148 @@ ULONG _getthreadid(ULONG dwProcessId)
 	return dwThread;
 }
 
-char shellCode[] =
-#ifndef _WIN64
-{ 0x68,0x90,0x90,0x90,0x90 //push xxxx eip占位符
-,0x9c //pushfd
-,0x60//pushad cpu现场
-,0x68,0x90,0x90,0x90,0x90//push xxxx dllpath
-,0xb8,0x90,0x90,0x90,0x90//mov eax xxxx LoadLibrary函数地址占位符
-,0xff,0xd0 //call eax
-,0x61 //popad
-,0x9d //popfd
-,0xc3 //ret
-};
-#else
-#endif
+// char shellCode[] =
+// #ifndef _WIN64
+// { 0x68,0x90,0x90,0x90,0x90 //push xxxx eip占位符
+// ,0x9c //pushfd
+// ,0x60//pushad cpu现场
+// ,0x68,0x90,0x90,0x90,0x90//push xxxx dllpath
+// ,0xb8,0x90,0x90,0x90,0x90//mov eax xxxx LoadLibrary函数地址占位符
+// ,0xff,0xd0 //call eax
+// ,0x61 //popad
+// ,0x9d //popfd
+// ,0xc3 //ret
+// };
+// #else
+// #endif
 
+/*
 UINT32 WINAPI CPBCDLLInjectDlg::SetThreadContextRoutine(PVOID pContext)
 {
-	PVOID pRemoteBuffer = NULL;
-	PVOID pRemoteDllPath = NULL;
-	HANDLE hProcess = NULL;
-	ULONG dwProcessId = 0;
-	ULONG dwThreadId = 0;
-	HANDLE hThread = NULL;
-	ULONG dwResult = 0;
-	char *pstrDllPath = "PBCR3HookDll.dll";
-	PTHREAD_START_ROUTINE pLoadLibraryFuncAddr = NULL;
-	CONTEXT ctx;
-	ULONG oldEip;
-	DWORD oldProtect;
-	
-	//while (CheckInput())
-	{
-		dwProcessId = *(ULONG *)pContext;
-		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION, FALSE, dwProcessId);
-		if (!hProcess)
-		{
-			dwResult = GetLastError();
-			::MessageBox(0,"OpenProcess fail!", "message", 0);
-			//break;
-			return dwResult;
-		}
+    PVOID pRemoteBuffer = NULL;
+    PVOID pRemoteDllPath = NULL;
+    HANDLE hProcess = NULL;
+    ULONG dwProcessId = 0;
+    ULONG dwThreadId = 0;
+    HANDLE hThread = NULL;
+    ULONG dwResult = 0;
+    char *pstrDllPath = "PBCR3HookDll.dll";
+    PTHREAD_START_ROUTINE pLoadLibraryFuncAddr = NULL;
+    CONTEXT ctx;
+    ULONG oldEip;
+    DWORD oldProtect;
 
-		pRemoteDllPath = VirtualAllocEx(hProcess, NULL, strlen(pstrDllPath) + 1, MEM_COMMIT, PAGE_READWRITE);
-		if (!pRemoteDllPath)
-		{
-			::MessageBox(0,"VirtuaalAllocEx With pRemoteDllPath fail!", "message", 0);
-			return dwResult;
-		}
+    //while (CheckInput())
+    {
+        dwProcessId = *(ULONG *)pContext;
+        hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION, FALSE, dwProcessId);
+        if (!hProcess)
+        {
+            dwResult = GetLastError();
+            ::MessageBox(0,"OpenProcess fail!", "message", 0);
+            //break;
+            return dwResult;
+        }
 
-		pLoadLibraryFuncAddr = (PTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle("Kernel32.dll"), "LoadLibraryA");
-		if (!pLoadLibraryFuncAddr)
-		{
-			::MessageBox(0,"GetProcAddress LoadLibraryA fail!", "message", 0);
-			return dwResult;
-		}
+        pRemoteDllPath = VirtualAllocEx(hProcess, NULL, strlen(pstrDllPath) + 1, MEM_COMMIT, PAGE_READWRITE);
+        if (!pRemoteDllPath)
+        {
+            ::MessageBox(0,"VirtuaalAllocEx With pRemoteDllPath fail!", "message", 0);
+            return dwResult;
+        }
 
-		dwThreadId = _getthreadid(dwProcessId);
-		hThread = OpenThread(THREAD_SET_CONTEXT | THREAD_GET_CONTEXT | THREAD_SUSPEND_RESUME, FALSE, dwThreadId);
-		if (!hThread)
-		{
-			::MessageBox(0,"OpenThread fail!", "message", 0);
-			return dwResult;
-		}
+        pLoadLibraryFuncAddr = (PTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle("Kernel32.dll"), "LoadLibraryA");
+        if (!pLoadLibraryFuncAddr)
+        {
+            ::MessageBox(0,"GetProcAddress LoadLibraryA fail!", "message", 0);
+            return dwResult;
+        }
 
-		pRemoteBuffer = VirtualAllocEx(hProcess, NULL, sizeof(shellCode), MEM_COMMIT, PAGE_EXECUTE_READ);
-		if (!pRemoteBuffer)
-		{
-			::MessageBox(0,"VirtualAllocEx With pRemoteBuffer fail!", "message", 0);
-			return dwResult;
-		}
+        dwThreadId = _getthreadid(dwProcessId);
+        hThread = OpenThread(THREAD_SET_CONTEXT | THREAD_GET_CONTEXT | THREAD_SUSPEND_RESUME, FALSE, dwThreadId);
+        if (!hThread)
+        {
+            ::MessageBox(0,"OpenThread fail!", "message", 0);
+            return dwResult;
+        }
 
-		dwResult = WriteProcessMemory(hProcess, pRemoteDllPath, pstrDllPath, strlen(pstrDllPath), NULL);
+        pRemoteBuffer = VirtualAllocEx(hProcess, NULL, sizeof(shellCode), MEM_COMMIT, PAGE_EXECUTE_READ);
+        if (!pRemoteBuffer)
+        {
+            ::MessageBox(0,"VirtualAllocEx With pRemoteBuffer fail!", "message", 0);
+            return dwResult;
+        }
 
-		if (!dwResult)
-		{
-			::MessageBox(0,"WriteProcess Memory Fail With Dll Path!", "message", 0);
-			return dwResult;
-		}
+        dwResult = WriteProcessMemory(hProcess, pRemoteDllPath, pstrDllPath, strlen(pstrDllPath), NULL);
 
-		SuspendThread(hThread);
+        if (!dwResult)
+        {
+            ::MessageBox(0,"WriteProcess Memory Fail With Dll Path!", "message", 0);
+            return dwResult;
+        }
 
-		ctx.ContextFlags = CONTEXT_CONTROL;
-		dwResult = GetThreadContext(hThread, &ctx);
-		if (!dwResult)
-		{
-			::MessageBox(0,"GetThreadContext fail!", "message", 0);
-			return dwResult;
-		}
+        SuspendThread(hThread);
 
-		oldEip = ctx.Eip;
-		ctx.Eip = (DWORD)pRemoteBuffer;
-		ctx.ContextFlags = CONTEXT_CONTROL;
-		VirtualProtect(pRemoteBuffer, sizeof(shellCode), PAGE_EXECUTE_READWRITE, &oldProtect);
-		CopyMemory(shellCode + 1, &oldEip, 4);
-		CopyMemory(shellCode + 8, &pRemoteDllPath, 4);
-		CopyMemory(shellCode + 0xd, &pLoadLibraryFuncAddr, 4);
+        ctx.ContextFlags = CONTEXT_CONTROL;
+        dwResult = GetThreadContext(hThread, &ctx);
+        if (!dwResult)
+        {
+            ::MessageBox(0,"GetThreadContext fail!", "message", 0);
+            return dwResult;
+        }
 
-		dwResult = WriteProcessMemory(hProcess, pRemoteBuffer, shellCode, sizeof(shellCode), NULL);
-		if (!dwResult)
-		{
-			::MessageBox(0,"WriteProcessMemory pRemoteBuffer Fail!", "message", 0);
-			return dwResult;
-		}
+        oldEip = ctx.Eip;
+        ctx.Eip = (DWORD)pRemoteBuffer;
+        ctx.ContextFlags = CONTEXT_CONTROL;
+        VirtualProtect(pRemoteBuffer, sizeof(shellCode), PAGE_EXECUTE_READWRITE, &oldProtect);
+        CopyMemory(shellCode + 1, &oldEip, 4);
+        CopyMemory(shellCode + 8, &pRemoteDllPath, 4);
+        CopyMemory(shellCode + 0xd, &pLoadLibraryFuncAddr, 4);
 
-		SetThreadContext(hThread, &ctx);
-		ResumeThread(hThread);
+        dwResult = WriteProcessMemory(hProcess, pRemoteBuffer, shellCode, sizeof(shellCode), NULL);
+        if (!dwResult)
+        {
+            ::MessageBox(0,"WriteProcessMemory pRemoteBuffer Fail!", "message", 0);
+            return dwResult;
+        }
 
-	}
+        SetThreadContext(hThread, &ctx);
+        ResumeThread(hThread);
 
-	//Sleep(8000);
+    }
 
-	if (pRemoteDllPath)
-		VirtualFree(pRemoteDllPath, strlen(pstrDllPath), 0);
-	if (pRemoteBuffer)
-		VirtualFree(pRemoteBuffer, sizeof(shellCode), 0);
-	if (hProcess)
-		CloseHandle(hProcess);
-	if (hThread)
-		CloseHandle(hThread);
-	
-	return dwResult;
+    //Sleep(8000);
+
+    if (pRemoteDllPath)
+        VirtualFree(pRemoteDllPath, strlen(pstrDllPath), 0);
+    if (pRemoteBuffer)
+        VirtualFree(pRemoteBuffer, sizeof(shellCode), 0);
+    if (hProcess)
+        CloseHandle(hProcess);
+    if (hThread)
+        CloseHandle(hThread);
+
+    return dwResult;
 
 }
+*/
+
 
 void CPBCDLLInjectDlg::OnBnClickedSetthreadcontextBtn()
 {
-	HANDLE hThread;
-	ULONG dwProcessId;
-
-	if (!CheckInput())
-		return;
-
-	dwProcessId = __atoi(m_strProcId.GetBuffer(),m_strProcId.GetLength());
-
-	hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)SetThreadContextRoutine, &dwProcessId, 0, 0);
-
-	WaitForSingleObject(hThread, INFINITE);
-
-	printf("\n");
+// 	HANDLE hThread;
+// 	ULONG dwProcessId;
+// 
+// 	if (!CheckInput())
+// 		return;
+// 
+// 	dwProcessId = __atoi(m_strProcId.GetBuffer(),m_strProcId.GetLength());
+// 
+// 	hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)SetThreadContextRoutine, &dwProcessId, 0, 0);
+// 
+// 	WaitForSingleObject(hThread, INFINITE);
+// 
+// 	printf("\n");
 }
 
 

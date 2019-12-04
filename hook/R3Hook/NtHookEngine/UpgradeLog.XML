@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NtHookEngine">
+</Property><Property Name="解决方案文件" Value="F:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\NtHookEngine.sln">
+</Property><Property Name="Date" Value="2019年10月19日">
+</Property><Property Name="Time" Value="22:08">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="NtHookEngine.sln" Description="文件已成功备份为 F:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\NtHookEngine.sln.old">
+</Event><Event ErrorLevel="0" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Converting project file 'F:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\NtHookEngine\NtHookEngine.vcproj'.">
+</Event><Event ErrorLevel="1" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Done converting to new project file 'F:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\NtHookEngine\NtHookEngine.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="NtHookEngine" Source="NtHookEngine\NtHookEngine.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="NtHookEngine.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="NtHookEngine.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -16,8 +16,26 @@ ULONG_PTR(__cdecl *GetOriginalFunction)(ULONG_PTR HookFunction);
 //Hook后的函数,签名要和原函数保持一致
 int WINAPI PBC_MessageBoxA(__in HWND hWnd, __in LPCSTR lpText, __in LPCSTR lpCaption, __in unsigned int uType);
 
+WINBASEAPI
+_Ret_maybenull_
+HMODULE
+WINAPI
+PBC_LoadLibraryExW(
+    _In_ LPCWSTR lpLibFileName,
+    _Reserved_ HANDLE hFile,
+    _In_ DWORD dwFlags
+);
+
 //定义备份函数
 int (WINAPI *OldMessageBoxA)(__in HWND hWnd, __in LPCSTR lpText, __in LPCSTR lpCaption, __in unsigned int uType);
+
+HMODULE
+(WINAPI *
+OldLoadLibraryExW)(
+    _In_ LPCWSTR lpLibFileName,
+    _Reserved_ HANDLE hFile,
+    _In_ DWORD dwFlags
+);
 
 VOID PBC_StartHook(VOID);
 VOID PBX_UnHook(VOID);
@@ -91,6 +109,8 @@ VOID PBC_StartHook(VOID)
 {
 	HMODULE hNtHookEngine;
 	ULONG_PTR MessageBoxAAddress;
+    ULONG_PTR LoadLibraryAddress;
+
 	hNtHookEngine =  LoadLibrary(_T("NtHookEngine.dll"));
 	if (!hNtHookEngine)
 	{
@@ -113,11 +133,27 @@ VOID PBC_StartHook(VOID)
 		return;
 	}
 	
+    MessageBoxA(0, _T("注入成功"), _T("message"), 0);
 	//开始Hook
 	MessageBoxAAddress = (ULONG_PTR)GetProcAddress(LoadLibraryA(_T("User32.dll")), _T("MessageBoxA"));
+    LoadLibraryAddress = (ULONG_PTR)GetProcAddress(LoadLibraryA(TEXT("KERNEL32.dll")), "LoadLibraryExW");
 	HookFunction((ULONG_PTR)MessageBoxAAddress, (ULONG_PTR)&PBC_MessageBoxA);
 	OldMessageBoxA = (int ( WINAPI *)(HWND,LPCSTR,LPCSTR,UINT))GetOriginalFunction((ULONG_PTR)PBC_MessageBoxA);
+    HookFunction((ULONG_PTR)LoadLibraryAddress, (ULONG_PTR)&PBC_LoadLibraryExW);
+    OldLoadLibraryExW = (HMODULE(WINAPI*)(LPCWSTR, HANDLE, DWORD))GetOriginalFunction((ULONG_PTR)PBC_LoadLibraryExW);
 
+}
+
+HMODULE
+WINAPI
+PBC_LoadLibraryExW(
+    _In_ LPCWSTR lpLibFileName,
+    _Reserved_ HANDLE hFile,
+    _In_ DWORD dwFlags
+)
+{
+    MessageBox(0,TEXT("执行LoadLibraryExW"),TEXT("执行LoadLibraryExW"),0);
+    return OldLoadLibraryExW(lpLibFileName, hFile, dwFlags);
 }
 
 int WINAPI PBC_MessageBoxA(__in HWND hWnd, __in LPCSTR lpText, __in LPCSTR lpCaption, __in unsigned int uType)

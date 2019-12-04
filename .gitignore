@@ -79,3 +79,12 @@ MFCDemo/Debug/
 MFCDemo/.vs/
 *.ncb
 firstmfc/Debug/
+*.tlog
+hook/R3Hook/NtHookEngine/NtHookEngine/x64/
+*.obj
+*.log
+*.old
+hook/R3Hook/NtHookEngine/.vs/
+*.iobj
+*.ipdb
+hook/R3Hook/PBCDLLInject/Target/Release/
