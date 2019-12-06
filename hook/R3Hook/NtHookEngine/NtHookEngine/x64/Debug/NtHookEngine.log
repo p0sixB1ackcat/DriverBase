@@ -1,0 +1,16 @@
+﻿  stdafx.cpp
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  NtHookEngine.cpp
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+    正在创建库 H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\NtHookEngine.lib 和对象 H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\NtHookEngine.exp
+LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+distorm_x64.lib(decoder.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(decoder.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(distorm.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(distorm.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(instructions.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(instructions.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(insts.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(insts.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(operands.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(operands.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(prefix.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(prefix.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(textdefs.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(textdefs.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(wstring.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(wstring.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+distorm_x64.lib(x86defs.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“distorm_x64.lib(x86defs.obj)”或在“H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  NtHookEngine.vcxproj -> H:\Code\Git\PBCWinDriversProject\hook\R3Hook\NtHookEngine\x64\Debug\NtHookEngine.dll
