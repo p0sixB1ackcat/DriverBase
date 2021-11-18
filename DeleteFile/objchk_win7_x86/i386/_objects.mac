@@ -1,7 +1,7 @@
 
 
 386_OBJECTS=\
- $(OBJ_PATH)\$O\pbcdeletedir.obj \
+ $(OBJ_PATH)\$O\pbcdeletefile.obj \
 
 
 

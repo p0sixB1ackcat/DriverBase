@@ -1,4 +1,0 @@
-TARGETNAME=p0sixB1ackcatNtModeldrv
-TARGETPATH=debug
-TARGETTYPE=DRIVER
-SOURCES=p0sixB1ackcatNtModeldrv.c

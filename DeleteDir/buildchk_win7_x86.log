@@ -34,7 +34,6 @@ BUILD: Examining c:\users\p0sixb1ackcat\documents\megasync\oacr invalidate root:
 1> /DFPO=0
 1> /D_DLL=1
 1> /DNDEBUG
-1> /DMY_DEBUG
 1> /DDEPRECATE_DDK_FUNCTIONS=1
 1> /DMSC_NOOPT
 1> /DNTDDI_VERSION=0x06010000
@@ -63,9 +62,9 @@ BUILD: Examining c:\users\p0sixb1ackcat\documents\megasync\oacr invalidate root:
 1> /wd4627
 1> /typedil-
 1> /FIC:\WinDDK\7600.16385.1\inc\api\warning.h
-1> .\deletdir.c 
-1>deletdir.c
-1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrlink /out:debug\i386\DeleteDir.sys /machine:ix86 @c:\users\p0sixb1ackcat\documents\megasync\1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1> .\pbcdeletedir.c 
+1>pbcdeletedir.c
+1>c:\users\p0sixb1ackcat\documents\megasync\1>warnings in directory c:\users\p0sixb1ackcat\documents\megasync\1>c:\users\p0sixb1ackcat\documents\megasync\1>c:\users\p0sixb1ackcat\documents\megasync\1>c:\users\p0sixb1ackcat\documents\megasync\1>c:\users\p0sixb1ackcat\documents\megasync\1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrlink /out:debug\i386\pbcDeleteDir.sys /machine:ix86 @c:\users\p0sixb1ackcat\documents\megasync\1>Microsoft (R) Incremental Linker Version 9.00.30729.207
 1>Copyright (C) Microsoft Corporation.  All rights reserved.
 1>/MERGE:_PAGE=PAGE 
 1>/MERGE:_TEXT=.text 
@@ -89,7 +88,7 @@ BUILD: Examining c:\users\p0sixb1ackcat\documents\megasync\oacr invalidate root:
 1>/base:0x10000 
 1>/subsystem:native,6.01 
 1>/entry:GsDriverEntry@8 
-1>/out:debug\i386\DeleteDir.sys 
+1>/out:debug\i386\pbcDeleteDir.sys 
 1>c:\users\p0sixb1ackcat\documents\megasync\1>C:\WinDDK\7600.16385.1\lib\win7\i386\BufferOverflowK.lib 
 1>C:\WinDDK\7600.16385.1\lib\win7\i386\ntoskrnl.lib 
 1>C:\WinDDK\7600.16385.1\lib\win7\i386\hal.lib 

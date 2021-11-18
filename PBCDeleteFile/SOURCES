@@ -1,4 +1,0 @@
-TARGETNAME=p0sixB1ackcatDeleteFile
-TARGETPATH=debug
-TARGETTYPE=DRIVER
-SOURCES=PBCDeleteFile.c
